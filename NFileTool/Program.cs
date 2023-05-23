@@ -28,9 +28,7 @@ namespace FileDateFix
         static void Main(string[] args)
         {
 
-            if (args.Length > 0 && args[0] != null)
-                enumFiles(args[0]);
-            else
+            if (!Directory.Exists(path))
             {
                 Console.WriteLine("No Action.\nSpecify a directory path");
                 return;
@@ -60,7 +58,7 @@ namespace FileDateFix
             foreach (var d in System.IO.Directory.GetDirectories(path))
             {
                 Console.Write(".");
-                enumFiles(d);
+                EnumFiles(d);
             }
 
         }
